@@ -1,5 +1,57 @@
+// Wrapper Aegis pour le plugin GLFW
 namespace Glfw {
-    func init {
-        glfw_init()
+
+    var Key = {
+        SPACE: 32,
+        ESCAPE: 256,
+        ENTER: 257,
+        RIGHT: 262,
+        LEFT: 263,
+        DOWN: 264,
+        UP: 265
+    }
+
+    // Initialise la librairie GLFW
+    // Retourne : true si succès
+    func init() {
+        return glfw_init()
+    }
+
+    // Crée une fenêtre
+    // Arguments : largeur (int), hauteur (int), titre (string)
+    // Retourne : un ID de fenêtre (int)
+    func createWindow(width, height, title) {
+        return glfw_create_window(width, height, title)
+    }
+
+    // Vérifie si la fenêtre doit se fermer (ex: clic sur la croix)
+    // Arguments : id de fenêtre (int)
+    // Retourne : true si elle doit fermer
+    func shouldClose(window_id) {
+        return glfw_window_should_close(window_id)
+    }
+
+    // Échange les buffers (rafraîchit l'image)
+    // Arguments : id de fenêtre (int)
+    func swapBuffers(window_id) {
+        return glfw_swap_buffers(window_id)
+    }
+
+    // Traite les événements en attente (clavier, souris, fenêtre)
+    // Sans cela, la fenêtre ne répondra pas et le curseur chargera indéfiniment
+    func pollEvents() {
+        return glfw_poll_events()
+    }
+
+    func getProcAddressFunc() {
+        return glfw_get_proc_address()
+    }
+
+    func getKey(win_id, key) {
+        return glfw_get_key(win_id, key)
+    }
+
+    func getTime() {
+        return glfw_get_time()
     }
 }

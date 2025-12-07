@@ -12,3 +12,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 aegis = { path = "../aegis" }
+glfw = "0.56"
+lazy_static = "1.4"
