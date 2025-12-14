@@ -1,0 +1,19 @@
+[project]
+name = "glfw"
+version = "0.1.0"
+description = "Aegis Natives Binding for the graphic library GLFW"
+author = "Ethan Rucar <ethan.rucar@gmail.com>"
+license = "MIT"
+exclude = [
+    "src",
+    "target",
+    "Cargo.lock",
+    "Cargo.toml"
+]
+
+[targets]
+linux = "libglfw.so"
+window = "glfw.dll"
+macos = "libglfw.dylib"
+
+[dependencies]

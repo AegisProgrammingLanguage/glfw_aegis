@@ -3,14 +3,10 @@ name = "glfw_aegis"
 version = "0.1.0"
 edition = "2024"
 
-[[bin]]
-name = "package"
-path = "scripts/build_package.rs"
-
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
-aegis = { path = "../aegis" }
+aegis-lang = "0.3.3"
 glfw = "0.56"
 lazy_static = "1.4"
